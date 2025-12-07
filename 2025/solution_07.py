@@ -2,28 +2,28 @@ from functools import cache
 
 # Part 1
 # Brute force
-# with open('input_07.txt', 'r') as file:
-#     res = 0
-#     curr = -1
+with open('input_07.txt', 'r') as file:
+    res = 0
+    curr = -1
 
-#     grid = []
-#     for line in file:
-#         line = line.strip()
-#         row = []
-#         for c in line:
-#             row.append(c)
-#         grid.append(row)
+    grid = []
+    for line in file:
+        line = line.strip()
+        row = []
+        for c in line:
+            row.append(c)
+        grid.append(row)
     
-#     for i in range(1, len(grid)):
-#         for j in range(len(grid[0])):
-#             if grid[i][j] == '.' and (grid[i - 1][j] == 'S' or grid[i - 1][j] == '|'):
-#                 grid[i][j] = '|'
-#             elif grid[i][j] == '^' and grid[i - 1][j] == '|':
-#                 res += 1
-#                 grid[i][j - 1] = '|'
-#                 grid[i][j + 1] = '|'
+    for i in range(1, len(grid)):
+        for j in range(len(grid[0])):
+            if grid[i][j] == '.' and (grid[i - 1][j] == 'S' or grid[i - 1][j] == '|'):
+                grid[i][j] = '|'
+            elif grid[i][j] == '^' and grid[i - 1][j] == '|':
+                res += 1
+                grid[i][j - 1] = '|'
+                grid[i][j + 1] = '|'
 
-#     print("How many times will the beam be split?:", res)
+    print("How many times will the beam be split?:", res)
 
 # Part 2
 # Dynamic programming
